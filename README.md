@@ -125,32 +125,6 @@ const processingSteps = [
 - **Debounced Events** to prevent excessive reflows
 - **CSS Variables** for consistent theming
 
-## 🌐 Deployment Options
-
-### GitHub Pages
-1. Push code to GitHub repository
-2. Go to Settings > Pages
-3. Select source branch (usually `main`)
-4. Your demo will be live at `https://yourusername.github.io/repository-name/`
-
-### Netlify
-1. Drag and drop the project folder to Netlify
-2. Or connect your GitHub repository
-3. Automatic deployment on every push
-
-### Vercel
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in project directory
-3. Follow the prompts for deployment
-
-### Any Static Host
-Since this is pure HTML/CSS/JS, it works on any static hosting service:
-- GitHub Pages
-- Netlify
-- Vercel
-- Firebase Hosting
-- AWS S3
-- And many more!
 
 ## 🛠️ Browser Support
 
