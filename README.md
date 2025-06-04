@@ -26,28 +26,6 @@ A stunning, fully interactive demo showcasing how AI agents work together to aut
 - **Mobile Responsive** - Works on all screen sizes
 - **Fast Loading** - Optimized for performance
 
-## 🎮 How to Use
-
-1. **Clone the Repository**
-   \`\`\`bash
-   git clone https://github.com/yourusername/ai-job-screening-demo.git
-   cd ai-job-screening-demo
-   \`\`\`
-
-2. **Open in Browser**
-   - Simply open `index.html` in your web browser
-   - Or use a local server for best experience:
-   \`\`\`bash
-   npm install -g live-server
-   live-server --port=3000
-   \`\`\`
-
-3. **Start the Demo**
-   - Click the "Start Demo" button
-   - Watch the AI agents work step by step
-   - View the final results with ranked candidates
-   - Use controls to reset or run again
-
 ## 📁 File Structure
 
 \`\`\`
@@ -171,23 +149,5 @@ The demo includes realistic data for:
 
 MIT License - Feel free to use this project for personal or commercial purposes.
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-If you have questions or need help:
-- Open an issue on GitHub
-- Check the code comments for guidance
-- Modify and experiment - it's all vanilla code!
-
----
-
-**Made with ❤️ using vanilla HTML, CSS, and JavaScript**
 
 *No frameworks, no dependencies, just pure web technologies creating something beautiful!*
