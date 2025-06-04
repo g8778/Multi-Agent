@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Screening System - Interactive Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h1 class="main-title">AI Job Screening System</h1>
+                </div>
+                <p class="subtitle">Watch AI agents work together to find perfect candidates</p>
+                
+                <!-- Start Demo Button -->
+                <button id="startDemo" class="demo-button">
+                    <span class="button-content">
+                        <i class="fas fa-play"></i>
+                        <span class="button-text">Start Demo</span>
+                    </span>
+                    <div class="button-ripple"></div>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="content-grid">
+            <!-- Job Description Card -->
+            <div class="card job-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h2>Job Opening</h2>
+                </div>
+                <div class="card-content">
+                    <div class="job-info">
+                        <h3 class="job-title">Senior Python Developer</h3>
+                        <p class="company-name">TechCorp Solutions</p>
+                        <p class="job-details">San Francisco, CA / Remote • Full-time</p>
+                    </div>
+                    <div class="requirements-section">
+                        <h4>Requirements:</h4>
+                        <ul class="requirements-list">
+                            <li><i class="fas fa-check-circle"></i> 5+ years Python development experience</li>
+                            <li><i class="fas fa-check-circle"></i> Django framework expertise</li>
+                            <li><i class="fas fa-check-circle"></i> AWS cloud services knowledge</li>
+                            <li><i class="fas fa-check-circle"></i> RESTful API development</li>
+                            <li><i class="fas fa-check-circle"></i> Team leadership experience</li>
+                            <li><i class="fas fa-check-circle"></i> Bachelor's degree in Computer Science</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Agents Status Card -->
+            <div class="card agents-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2>AI Agents Status</h2>
+                </div>
+                <div class="card-content">
+                    <div class="agents-grid" id="agentsGrid">
+                        <!-- Agents will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Processing Timeline (Hidden initially) -->
+        <div class="card timeline-card" id="timelineCard" style="display: none;">
+            <div class="card-header">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h2>Live Processing Status</h2>
+            </div>
+            <div class="card-content">
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Timeline steps will be populated by JavaScript -->
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-text" id="progressText">0% Complete</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section (Hidden initially) -->
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <!-- Statistics Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Resumes Reviewed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Top Candidates</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Minutes Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-number" data-target="92">0</div>
+                    <div class="stat-label">Average Match %</div>
+                </div>
+            </div>
+
+            <!-- Top Candidates Card -->
+            <div class="card candidates-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h2>Top Ranked Candidates</h2>
+                </div>
+                <div class="card-content">
+                    <div class="candidates-list" id="candidatesList">
+                        <!-- Candidates will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Automated Actions Card -->
+            <div class="card actions-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Automated Actions Completed</h2>
+                </div>
+                <div class="card-content">
+                    <div class="actions-grid">
+                        <div class="action-group">
+                            <div class="action-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>5 personalized interview emails sent</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Calendar booking links included</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-bell"></i>
+                                <span>Follow-up reminders scheduled</span>
+                            </div>
+                        </div>
+                        <div class="action-group">
+                            <div class="action-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Performance metrics updated</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-brain"></i>
+                                <span>System learning improved</span>
+                            </div>
+                            <div class="action-item">
+                                <i class="fas fa-file-pdf"></i>
+                                <span>Detailed reports generated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Demo Controls -->
+        <div class="demo-controls" id="demoControls" style="display: none;">
+            <div class="controls-container">
+                <p class="controls-label">Demo Controls</p>
+                <div class="controls-buttons">
+                    <button id="resetDemo" class="control-button secondary">
+                        <i class="fas fa-redo"></i>
+                        Reset Demo
+                    </button>
+                    <button id="runAgain" class="control-button primary">
+                        <i class="fas fa-play"></i>
+                        Run Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">AI Agents are working...</p>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <i class="fas fa-check-circle"></i>
+            <span>Demo completed successfully!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
